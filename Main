@@ -1,0 +1,19 @@
+package Flieger;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Jet jet = new Jet("Boeing 717", 2017, 6000, true, 150000, "Jet Fuel", 2, 1000);
+        jet.addEngine(new Engine("E1", 50000));
+        jet.addEngine(new Engine("E2", 55000));
+
+        Hangar hangar = new Hangar("Hangar1", 1, "Sta", true, true);
+        hangar.parkFlugzeug(jet);
+
+        Flugplatz flugplatz = new Flugplatz("Hafen 1", 2, true, 5000, true);
+        flugplatz.addHangar(hangar);
+
+        System.out.println(jet.getTotalThrust());
+
+    }
+}
